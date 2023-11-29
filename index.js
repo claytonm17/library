@@ -43,3 +43,20 @@ function displayBooks() {
         console.log(greatLibrary.getLibrary()[i])
     }
 }
+
+// Event listener for add book button
+let addBookButton = document.querySelector('.add-book');
+addBookButton.addEventListener('click', () => {
+    console.log('click')
+});
+
+// Create book tab
+const createBookContainer = (book) => {
+    const bookContainer = document.createElement('div');
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+    const read = document.createElement('p');
+    const buttons = document.createElement('button');
+    console.log(title)
+}
