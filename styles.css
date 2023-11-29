@@ -45,6 +45,7 @@ h1 {
     color: var(--dark-text-color);
     font-size: 1rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 svg {
@@ -113,4 +114,5 @@ svg {
     border-radius: 0.5rem;
     color: var(--light-text-color);
     align-self: center;
+    cursor: pointer;
 }
