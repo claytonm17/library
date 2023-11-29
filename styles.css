@@ -23,7 +23,7 @@ body {
     align-items: center;
     background-color: var(--light-text-color);
     padding: 1vw 1vh;
-    border-bottom: solid 2px var(--accent-color);
+    border-bottom: solid 0.2rem var(--accent-color);
 }
 
 h1 {
@@ -81,11 +81,12 @@ svg {
 
 .book-container {
     padding: 1rem;
-    border: 0.1rem solid var(--accent-color);
+    border: 0.2rem solid var(--accent-color);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--light-text-color);
 }
 
 .book-container > h2 {
@@ -114,5 +115,53 @@ svg {
     border-radius: 0.5rem;
     color: var(--light-text-color);
     align-self: center;
+    cursor: pointer;
+}
+
+.form-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 0.2rem solid var(--accent-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 16rem;
+    height: 16rem;
+    background-color: var(--light-text-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    align-items: center;
+}
+
+.form-contents>input {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.buttons>input {
+    background-color: lightgreen;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.buttons>button {
+    background-color:#ff5e5b;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
     cursor: pointer;
 }
