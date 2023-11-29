@@ -32,5 +32,14 @@ const greatLibrary = (function(){
 
 })();
 
+// Populate books
 greatLibrary.addBookToLibrary("Ishmael", "Daniel Quinn", 266, true);
-greatLibrary.addBookToLibrary("Ishmael2", "Daniel Quinn2", 267, false);
+greatLibrary.addBookToLibrary("Sapiens", "Yuval Noah Harari", 581, true);
+greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvella", 505, false);
+
+// Loop through array to display each book
+function displayBooks() {
+    for (let i = 0; i < (greatLibrary.getLibrary().length); i++){
+        console.log(greatLibrary.getLibrary()[i])
+    }
+}
