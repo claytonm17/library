@@ -79,53 +79,15 @@ const createBookContainer = (book) => {
     shelf.appendChild(bookContainer);
 }
 
-// Add a book functionality
-// Event listener for add book button
-let addBookButton = document.querySelector('.add-book');
+const addBookButton = document.querySelector('.add-book');
+const formContainer = document.querySelector('.form-container');
+const cancelButton = document.querySelector('.cancel');
+formContainer.style.display = 'none';
+
 addBookButton.addEventListener('click', () => {
-    console.log('click');
-    createForm();
+    formContainer.style.display = 'block';
 });
 
-// Create form function
-const createForm = () => {
-    const formContainer = document.createElement('form');
-    // Title
-    const titleContainer = document.createElement('div');
-    const titleLabel = document.createElement('label');
-    const titleInput = document.createElement('input');
-    // Author
-    const authorContainer = document.createElement('div');
-    const authorLabel = document.createElement('label');
-    const authorInput = document.createElement('input');
-    // Pages
-    const pagesContainer = document.createElement('div');
-    const pagesLabel = document.createElement('label');
-    const pagesInput = document.createElement('input');
-    // Read?
-    const isReadContainer = document.createElement('div');
-    const isReadLabel = document.createElement('label');
-    const isReadInput = document.createElement('input');
-
-    // Label text contents
-    titleLabel.textContent = 'Title:';
-    authorLabel.textContent = 'Author:';
-    pagesLabel.textContent = 'Pages:';
-    isReadLabel.textContent = 'Read?';
-
-    // Layout of DOM
-    formContainer.appendChild(titleContainer);
-    formContainer.appendChild(authorContainer);
-    formContainer.appendChild(pagesContainer);
-    formContainer.appendChild(isReadContainer);
-    titleContainer.appendChild(titleLabel);
-    titleContainer.appendChild(titleInput);
-    authorContainer.appendChild(authorLabel);
-    authorContainer.appendChild(authorInput);
-    pagesContainer.appendChild(pagesLabel);
-    pagesContainer.appendChild(pagesInput);
-    isReadContainer.appendChild(isReadLabel);
-    isReadContainer.appendChild(isReadInput);
-
-    shelf.appendChild(formContainer);
-}
+cancelButton.addEventListener('click', () => {
+    formContainer.style.display = 'none';
+})
