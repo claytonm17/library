@@ -33,9 +33,9 @@ const greatLibrary = (function(){
 })();
 
 // Populate books (Highly recommend these!)
-greatLibrary.addBookToLibrary("Ishmael", "Daniel Quinn", 266, true);
-greatLibrary.addBookToLibrary("Sapiens", "Yuval Noah Harari", 581, true);
-greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvella", 505, false);
+//greatLibrary.addBookToLibrary("Ishmael", "Daniel Quinn", 266, true);
+//greatLibrary.addBookToLibrary("Sapiens", "Yuval Noah Harari", 581, true);
+//greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvella", 505, false);
 
 // Loop through array to display each book
 function displayAllBooks() {
@@ -80,14 +80,34 @@ const createBookContainer = (book) => {
 }
 
 const addBookButton = document.querySelector('.add-book');
-const formContainer = document.querySelector('.form-container');
-const cancelButton = document.querySelector('.cancel');
-formContainer.style.display = 'none';
-
 addBookButton.addEventListener('click', () => {
     formContainer.style.display = 'block';
 });
 
+const formContainer = document.querySelector('.form-container');
+formContainer.style.display = 'none';
+
+const cancelButton = document.querySelector('.cancel');
 cancelButton.addEventListener('click', () => {
     formContainer.style.display = 'none';
+})
+
+formContainer.addEventListener('submit', () => {
+    event.preventDefault()
+    // Get input values
+    const title = document.getElementById('title-input').value;
+    const author = document.getElementById('author-input').value;
+    const pages = document.getElementById('pages-input').value;
+    const isRead = document.getElementById('yes-input').checked;
+
+    greatLibrary.addBookToLibrary(title, author, pages, isRead);
+
+    // Resetting the form
+    formContainer.style.display = 'none';
+    document.getElementById('title-input').value = '';
+    document.getElementById('author-input').value = '';
+    document.getElementById('pages-input').value = '';
+    document.getElementById('yes-input').checked = false;
+    
+    displayAllBooks();
 })
