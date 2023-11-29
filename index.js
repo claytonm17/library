@@ -39,6 +39,9 @@ const greatLibrary = (function(){
 
 // Loop through array to display each book
 function displayAllBooks() {
+    while (shelf.firstChild) {
+        shelf.removeChild(shelf.firstChild);
+    }
     for (let i = 0; i < (greatLibrary.getLibrary().length); i++){
         console.log(greatLibrary.getLibrary()[i]);
         createBookContainer(greatLibrary.getLibrary()[i]);
