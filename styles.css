@@ -2,3 +2,42 @@
     margin: 0px;
     padding: 0px;
 }
+
+:root {
+    --dark-text-color: #000000;
+    --light-text-color: #FFFFFF;
+    --light-background-color: #b8bacf;
+    --accent-color: #437c90;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-background-color);
+    padding: 1vw 1vh;
+}
+
+h1 {
+    margin: 0 auto;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'UnifrakturMaguntia', serif;
+    text-shadow: 5px 5px 0.2em #437c90;
+}
+
+.header>button {
+    margin-right: 1vw;
+    border: 0px;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    font-size: 1rem;
+    font-weight: 700;
+}
