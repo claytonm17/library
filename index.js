@@ -43,7 +43,6 @@ function displayAllBooks() {
         shelf.removeChild(shelf.firstChild);
     }
     for (let i = 0; i < (greatLibrary.getLibrary().length); i++){
-        console.log(greatLibrary.getLibrary()[i]);
         createBookContainer(greatLibrary.getLibrary()[i]);
     }
 }
@@ -52,6 +51,11 @@ let shelf = document.querySelector('.library');
 
 // Create book tab
 const createBookContainer = (book) => {
+    // Ensure a title
+    if (!book.title){
+        return
+    }
+
     const bookContainer = document.createElement('div');
     const title = document.createElement('h2');
     const author = document.createElement('h3');
@@ -92,7 +96,7 @@ formContainer.style.display = 'none';
 
 const cancelButton = document.querySelector('.cancel');
 cancelButton.addEventListener('click', () => {
-    formContainer.style.display = 'none';
+    clearForm();
 })
 
 formContainer.addEventListener('submit', () => {
@@ -105,12 +109,15 @@ formContainer.addEventListener('submit', () => {
 
     greatLibrary.addBookToLibrary(title, author, pages, isRead);
 
-    // Resetting the form
-    formContainer.style.display = 'none';
+    // Resetting the form and displaying all books
+    clearForm();
+    displayAllBooks();
+})
+
+const clearForm = () => {
     document.getElementById('title-input').value = '';
     document.getElementById('author-input').value = '';
     document.getElementById('pages-input').value = '';
     document.getElementById('yes-input').checked = false;
-    
-    displayAllBooks();
-})
+    formContainer.style.display = 'none';
+}
