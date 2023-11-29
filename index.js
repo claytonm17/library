@@ -38,7 +38,7 @@ greatLibrary.addBookToLibrary("Sapiens", "Yuval Noah Harari", 581, true);
 greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvella", 505, false);
 
 // Loop through array to display each book
-function displayBooks() {
+function displayAllBooks() {
     for (let i = 0; i < (greatLibrary.getLibrary().length); i++){
         console.log(greatLibrary.getLibrary()[i]);
         createBookContainer(greatLibrary.getLibrary()[i]);
@@ -68,7 +68,13 @@ const createBookContainer = (book) => {
     read.textContent = `Read: ${book.isRead ? 'Yes' : 'No'}`;
     buttons.textContent = 'Delete';
 
+    buttons.classList.add('delete-button');
     bookContainer.classList.add('book-container');
+    if (book.isRead === true) {
+        read.classList.add('yes-read');
+    } else {
+        read.classList.add('not-read');
+    }
 
     bookContainer.appendChild(title);
     bookContainer.appendChild(author);
@@ -79,4 +85,4 @@ const createBookContainer = (book) => {
     shelf.appendChild(bookContainer);
 }
 
-displayBooks()
+displayAllBooks()

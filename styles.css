@@ -9,6 +9,7 @@
     --light-background-color: #f2f2f2;
     --accent-color: #cccccc;
     --hightlight-color: #3498db;
+    --delete-button: #ff5e5b;
 }
 
 body {
@@ -70,13 +71,46 @@ svg {
 
 .library {
     display: grid;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+    grid-template-rows: 250px;
+    gap: 1rem;
+    margin: 1rem;
+    justify-content: start;
 }
 
 .book-container {
-    width: 20%;
     padding: 1rem;
-    margin: 1rem;
-    border: 0.1rem solid var(--hightlight-color);
+    border: 0.1rem solid var(--accent-color);
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-container > h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.book-container > h3 {
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.yes-read {
+    color: green;
+}
+
+.not-read {
+    color: red;
+}
+
+.delete-button {
+    background-color: var(--delete-button);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--light-text-color);
+    align-self: center;
 }
