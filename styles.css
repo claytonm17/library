@@ -67,3 +67,16 @@ svg {
 .add-book:hover {
     background-color: var(--accent-color);
 }
+
+.library {
+    display: grid;
+    flex-wrap: wrap;
+}
+
+.book-container {
+    width: 20%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 0.1rem solid var(--hightlight-color);
+    border-radius: 1rem;
+}

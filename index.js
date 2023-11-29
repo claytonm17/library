@@ -32,7 +32,7 @@ const greatLibrary = (function(){
 
 })();
 
-// Populate books
+// Populate books (Highly recommend these!)
 greatLibrary.addBookToLibrary("Ishmael", "Daniel Quinn", 266, true);
 greatLibrary.addBookToLibrary("Sapiens", "Yuval Noah Harari", 581, true);
 greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvella", 505, false);
@@ -40,7 +40,8 @@ greatLibrary.addBookToLibrary("The Skeptics Guide to the Universe", "Jay Norvell
 // Loop through array to display each book
 function displayBooks() {
     for (let i = 0; i < (greatLibrary.getLibrary().length); i++){
-        console.log(greatLibrary.getLibrary()[i])
+        console.log(greatLibrary.getLibrary()[i]);
+        createBookContainer(greatLibrary.getLibrary()[i]);
     }
 }
 
@@ -50,13 +51,32 @@ addBookButton.addEventListener('click', () => {
     console.log('click')
 });
 
+let shelf = document.querySelector('.library');
+
 // Create book tab
 const createBookContainer = (book) => {
     const bookContainer = document.createElement('div');
-    const title = document.createElement('p');
-    const author = document.createElement('p');
+    const title = document.createElement('h2');
+    const author = document.createElement('h3');
     const pages = document.createElement('p');
     const read = document.createElement('p');
     const buttons = document.createElement('button');
-    console.log(title)
+   
+    title.textContent = `${book.title}`;
+    author.textContent = `Author: ${book.author}`;
+    pages.textContent = `Pages: ${book.pages}`;
+    read.textContent = `Read: ${book.isRead ? 'Yes' : 'No'}`;
+    buttons.textContent = 'Delete';
+
+    bookContainer.classList.add('book-container');
+
+    bookContainer.appendChild(title);
+    bookContainer.appendChild(author);
+    bookContainer.appendChild(pages);
+    bookContainer.appendChild(read);
+    bookContainer.appendChild(buttons);
+
+    shelf.appendChild(bookContainer);
 }
+
+displayBooks()
