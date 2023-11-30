@@ -121,3 +121,12 @@ const clearForm = () => {
     document.getElementById('yes-input').checked = false;
     formContainer.style.display = 'none';
 }
+
+// Delete button
+shelf.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-button')) {
+        const bookTitle = event.target.parentElement.querySelector('h2').textContent;
+        greatLibrary.removeBook(bookTitle);
+        displayAllBooks();
+    }
+})
