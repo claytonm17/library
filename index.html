@@ -22,9 +22,16 @@
     <div class="form-container">
         <form action="" method="" class="form-contents">
             <h3>Enter your book</h3>
-            <input type="text" name="title" id="title-input" placeholder="Title"/>
-            <input type="text" name="author" id="author-input" placeholder="Author"/>
-            <input type="number" name="pages" id="pages-input" placeholder="Pages"/>
+            <input type="text" name="title" id="title-input" placeholder="Title" required/>
+            <input type="text" name="author" id="author-input" placeholder="Author" required/>
+            <input 
+            type="number" 
+            name="pages" 
+            id="pages-input" 
+            placeholder="Pages" 
+            min = "1"
+            max = "21450"  
+            required/>
             <div class="isRead-container">
                 <label for="isRead" class="isRead-label">Have you read?</label>
                 <input type="checkbox" name="yes" id="yes-input"/>

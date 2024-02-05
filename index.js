@@ -99,7 +99,7 @@ cancelButton.addEventListener('click', () => {
     clearForm();
 })
 
-formContainer.addEventListener('submit', () => {
+formContainer.addEventListener('submit', function(event) {
     event.preventDefault()
     // Get input values
     const title = document.getElementById('title-input').value;
